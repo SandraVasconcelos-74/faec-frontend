@@ -1,0 +1,267 @@
+/* ==============================
+   Tokens de cores, fontes, sombras
+   ============================== */
+:root {
+  --bg: #f3f6f4;
+  --accent: #1b6b2b;
+  --accent-strong: #0f5a2a;
+  --muted: #667085;
+  --card: #ffffff;
+  --radius-xl: 18px;
+  --radius-lg: 14px;
+  --radius-sm: 8px;
+  --shadow-heavy: 0 24px 60px rgba(7,15,20,0.09);
+  --shadow-soft: 0 8px 30px rgba(7,15,20,0.06);
+  --text-on-visual: rgba(255,255,255,0.98);
+  --visual-overlay-top: rgba(6,40,18,0.62);
+  --visual-overlay-bottom: rgba(8,25,20,0.38);
+}
+
+/* ==============================
+   Reset e base
+   ============================== */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0b1220;
+}
+
+/* ==============================
+   Container principal
+   ============================== */
+.container {
+  width: 94%;
+  max-width: 1240px;
+  margin: 36px auto;
+  min-height: calc(80vh);
+  display: flex;
+  align-items: stretch;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: var(--shadow-heavy);
+  position: relative;
+}
+
+/* ==============================
+   Painel visual (esquerda)
+   ============================== */
+.visual {
+  flex: 1.35;
+  min-width: 340px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/images/campo.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #0f5a2a;
+}
+
+.visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--visual-overlay-top), var(--visual-overlay-bottom));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.visual-content {
+  position: relative;
+  z-index: 2;
+  padding: 56px 64px;
+  max-width: 560px;
+  color: var(--text-on-visual);
+  text-align: left;
+}
+
+.visual-content img {
+  width: 300px; 
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.visual-content h1 {
+  margin: 0 0 14px;
+  font-size: 44px;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.visual-content p.lead {
+  margin: 0 0 10px;
+  font-size: 16.5px;
+  max-width: 460px;
+  opacity: 0.95;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* ==============================
+   Painel direito (formulário)
+   ============================== */
+.form-wrap {
+  flex: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.995), rgba(250,250,250,0.995));
+}
+
+.form-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(13,20,26,0.03);
+  position: relative;
+}
+
+/* logo acima do cartão */
+.logo-img {
+  display: block;
+  margin: -56px auto 14px;
+  height: 60px;
+  width: auto;
+}
+
+/* título do formulário */
+.form-card h2 {
+  margin: 8px 0 18px;
+  font-size: 20px;
+  color: #0f1724;
+  text-align: left;
+}
+
+/* inputs */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e6e9ee;
+  background: #fbfdff;
+  margin-bottom: 14px;
+  font-size: 14px;
+  transition: box-shadow .15s, border-color .15s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 5px rgba(27,107,43,0.07);
+}
+
+/* ==============================
+   Botões e ações
+   ============================== */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.btn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  color: #fff;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(15,64,33,0.09);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   Preview de documentos (opcional)
+   ============================== */
+.preview-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.preview-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* ==============================
+   Rodapé do card
+   ============================== */
+.form-card footer {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ==============================
+   Responsividade
+   ============================== */
+@media(max-width:900px) {
+  .container { flex-direction: column; margin: 0; min-height: 100vh; border-radius: 0; box-shadow: none; }
+  .visual { order: 1; min-height: 260px; background-position: center 35%; }
+  .visual-content { padding: 24px; text-align: center; max-width: 100%; }
+  .visual-content h1 { font-size: 28px; }
+  .form-wrap { order: 2; padding: 28px; }
+  .form-card { margin-top: -36px; border-radius: 12px; width: 92%; }
+}
+
+/* ==============================
+   Estilos de erro
+   ============================== */
+.error-message {
+  color: #D93025;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 8px;
+}
+
+.input.input-error {
+  border-color: #D93025;
+  background: #FCE8E6;
+}
+
+.input.input-error:focus {
+  border-color: #D93025;
+  box-shadow: 0 0 0 2px rgba(217,48,37,0.12);
+}
+
+
