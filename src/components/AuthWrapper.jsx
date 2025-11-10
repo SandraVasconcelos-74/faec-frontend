@@ -1,6 +1,6 @@
 // src/components/AuthWrapper.jsx
 import React, { useEffect, useRef, useState } from 'react';
-import '../styles/telaCadastro.css';
+import '../styles/Cadastro.css';
 import Login from './Login';
 import Cadastro from './Cadastro';
 

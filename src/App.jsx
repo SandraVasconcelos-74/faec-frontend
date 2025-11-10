@@ -1,10 +1,10 @@
-import React from "react";
-import TelaCadastro from "./pages/TelaCadastro";
+import React, { useEffect, useRef, useState } from 'react';
+import Cadastro from "./pages/Cadastro";
 
 function App() {
   return (
     <div>
-      <TelaCadastro />
+      <Cadastro />
     </div>
   );
 }

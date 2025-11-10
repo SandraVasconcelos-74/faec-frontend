@@ -1,6 +1,6 @@
 // src/components/Cadastro.jsx
 import React, { useState, useEffect } from 'react';
-import '../styles/telaCadastro.css';
+import '../styles/Cadastro.css';
 
 const STORAGE_KEY = 'cadastroDraft_v1';
 

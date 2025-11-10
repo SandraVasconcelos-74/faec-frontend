@@ -1,6 +1,6 @@
 // src/components/Login.jsx
-import React from 'react';
-import '../styles/telaCadastro.css';
+import React, { useEffect, useRef, useState } from 'react';
+import '../styles/Cadastro.css';
 
 export default function Login({ openRegister, cadastroState }) {
   const [email, setEmail] = useState('');
@@ -8,7 +8,7 @@ export default function Login({ openRegister, cadastroState }) {
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
-    // coloque aqui a lógica real de autenticação (fetch/axios)
+   
     console.log('Login:', { email, password });
   };
 
