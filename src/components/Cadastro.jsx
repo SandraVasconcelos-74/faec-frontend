@@ -1,5 +1,5 @@
 // src/components/Cadastro.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/telaCadastro.css';
 
 const STORAGE_KEY = 'cadastroDraft_v1';
@@ -25,14 +25,14 @@ export default function Cadastro({ formState, setField, onSubmit, openLogin }) {
     try {
       const raw = sessionStorage.getItem(STORAGE_KEY);
       if (raw) setLocal(JSON.parse(raw));
-    } catch (err) {}
+    } catch (err) { /* ignore */ }
   }, [isLifted]);
 
   useEffect(() => {
     if (isLifted) return;
     try {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(local));
-    } catch (err) {}
+    } catch (err) { /* ignore */ }
   }, [local, isLifted]);
 
   const read = (key) => (isLifted ? formState[key] ?? '' : local[key] ?? '');
