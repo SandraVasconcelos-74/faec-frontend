@@ -1,0 +1,99 @@
+.auth-container {
+  display: flex;
+  width: 100%;
+  max-width: 1240px;
+  margin: 40px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(7,15,20,0.09);
+  background: #fff;
+  transition: all 0.8s ease;
+}
+
+.auth-panel {
+  flex: 1;
+  position: relative;
+}
+
+/* Painel esquerdo (imagem e texto) */
+.auth-visual {
+  background: url("/images/jovem-agro.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.8s ease;
+}
+
+.auth-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6,40,18,0.62), rgba(8,25,20,0.38));
+}
+
+.auth-visual-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  max-width: 480px;
+}
+
+.auth-visual-content h1 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.auth-forms {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Slides de formulário */
+.forms-slider {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.8s ease;
+}
+
+.form-slide {
+  width: 50%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-slide {
+  background: #fff;
+}
+
+.register-slide {
+  background: #fff;
+}
+
+/* Transição: ao ativar cadastro */
+.auth-container.active .forms-slider {
+  transform: translateX(-50%);
+}
+
+/* A imagem se move para a esquerda */
+.auth-container.active .auth-visual {
+  transform: translateX(-15%);
+}
+
+@media (max-width: 900px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .forms-slider {
+    width: 200%;
+  }
+
+  .auth-container.active .forms-slider {
+    transform: translateX(-50%);
+  }
+}

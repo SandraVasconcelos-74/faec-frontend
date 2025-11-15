@@ -1,15 +1,14 @@
 // src/components/Login.jsx
-import React, { useEffect, useRef, useState } from 'react';
-import '../styles/Cadastro.css';
+import React, {useState } from "react";
+import "../styles/Cadastro.css";
 
 export default function Login({ openRegister, cadastroState }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
-   
-    console.log('Login:', { email, password });
+    console.log("Login:", { email, password });
   };
 
   return (
@@ -42,24 +41,20 @@ export default function Login({ openRegister, cadastroState }) {
           />
 
           <div className="actions">
-            <button type="submit" className="btn">Entrar</button>
-            <a href="#" className="muted">Esqueceu a senha?</a>
-          </div>
-
-          <footer style={{ marginTop: 12 }}>
-            Não tem uma conta?{' '}
-            <a
-              href="#"
-              className="link"
-              onClick={(e) => {
-                e.preventDefault();
-                if (typeof openRegister === 'function') return openRegister();
-                const fallback = document.querySelector('.link-open-register');
+            <button type="submit" className="btn">
+              Entrar
+            </button>
+            <button type="button" className="btn" onClick={(e) => {
+              e.preventDefault();
+                if (typeof openRegister === "function") return openRegister();
+                const fallback = document.querySelector(".link-open-register");
                 if (fallback) fallback.click();
-              }}
-            >
-              Cadastre-se
-            </a>
+            }}>
+              Cadastro
+            </button>
+          </div>
+          <footer style={{ marginTop: 12 }}>
+            <a href="#" className="muted">Esqueceu a senha?</a>
           </footer>
         </form>
       </div>

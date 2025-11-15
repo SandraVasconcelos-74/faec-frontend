@@ -11,7 +11,7 @@
   --radius-lg: 14px;
   --radius-sm: 8px;
   --shadow-heavy: 0 24px 60px rgba(7,15,20,0.09);
-  --shadow-soft: 0 8px 30px rgba(7,15,20,0.06);
+  --shadow-soft: 0 10px 40px rgba(7,15,20,0.06);
   --text-on-visual: rgba(255,255,255,0.98);
   --visual-overlay-top: rgba(6,40,18,0.62);
   --visual-overlay-bottom: rgba(8,25,20,0.38);
@@ -120,7 +120,7 @@ body {
 }
 
 .form-card {
-  width: 100%;
+  width: 200%;
   max-width: 420px;
   background: var(--card);
   padding: 36px;
@@ -128,14 +128,18 @@ body {
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(13,20,26,0.03);
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* logo acima do cartão */
 .logo-img {
   display: block;
-  margin: -56px auto 14px;
+  margin: 56px auto 14px;
   height: 60px;
   width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* título do formulário */
@@ -150,7 +154,7 @@ body {
 label {
   display: block;
   margin-bottom: 6px;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
 }
 
@@ -182,15 +186,17 @@ label {
 }
 
 .btn {
+  width: 100%;
   background: linear-gradient(90deg, var(--accent), var(--accent-strong));
   color: #fff;
   border: none;
-  padding: 11px 16px;
+  padding: 11px;
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 28px rgba(15,64,33,0.09);
 }
+
 
 .btn:hover {
   transform: translateY(-2px);

@@ -126,17 +126,23 @@ export default function Cadastro({ formState, setField, onSubmit, openLogin }) {
           {errors.role && <div className="error-message">{errors.role}</div>}
 
           <div className="actions" style={{ marginTop: 10 }}>
-            <button type="submit" className="btn">Cadastrar</button>
-            <a href="#" className="muted" style={{ alignSelf: 'center' }}>Política de privacidade</a>
+            <button type="submit" className="btn btn-cadastro">
+              Cadastrar
+              </button>
           </div>
-
-          {errors.submit && <div className="error-message" style={{ marginTop: 8 }}>{errors.submit}</div>}
+          {errors.submit && <div className="error-message" style={{ marginTop: 25 }}>{errors.submit}</div>}
 
           <footer style={{ marginTop: 14 }}>
-            Já tem uma conta?{' '}
-            <a href="#" className="link" onClick={(e) => { e.preventDefault(); if (typeof openLogin === 'function') return openLogin(); }}>
+            <div>
+              <a href="#" className="muted" style={{ alignSelf: 'center', marginTop: 24 }}>Política de privacidade</a>
+            </div>
+            <div>
+              Já tem uma conta?{' '}
+              <a href="#" className="link" onClick={(e) => { e.preventDefault(); if (typeof openLogin === 'function') return openLogin(); }}>
               Entrar
-            </a>
+              </a>
+            </div>
+            
           </footer>
         </form>
       </div>
