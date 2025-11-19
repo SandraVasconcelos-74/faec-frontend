@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import AuthWrapper from '../components/AuthWrapper';
+import AuthWrapper from '../components/AuthContainer';
 import Login from '../components/Login';
 import Cadastro from '../components/Cadastro';
 
