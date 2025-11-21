@@ -25,9 +25,13 @@ form {
 
 /* REVERTENDO A MARGEM: Deixando apenas a margem inferior */
 .logo-img { 
-  height: 45px; 
-  margin-bottom: 15px; 
-  /* margin-top: 0; ou remova a propriedade margin-top se ela estiver presente */
+ .logo-img {
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
+
 }
 h2 { color: var(--accent); margin-bottom: 15px; font-size: 24px; }
 
@@ -79,9 +83,53 @@ input:focus, select:focus {
   transition: background-color 0.3s;
 }
 
+/* --- CONTAINER DO FORMULÁRIO --- */
+.form-panel {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: var(--bg);
+}
+
+/* --- CARD DO FORMULÁRIO --- */
+.form-card {
+  background: var(--card);
+  width: 100%;
+  max-width: 380px;
+  padding: 30px 25px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+
 .btn:hover { background-color: var(--accent-light); }
 
 .actions { width: 100%; display: flex; justify-content: space-between; margin-top: 15px; align-items: center; }
 footer { margin-top: 20px; font-size: 13px; color: var(--muted); }
 .link { color: var(--accent); font-weight: bold; cursor: pointer; margin-left: 5px; text-decoration: none; }
 .link:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+}
