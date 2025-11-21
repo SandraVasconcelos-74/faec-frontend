@@ -1,5 +1,5 @@
-// src/components/Login.jsx
-import React, {useState } from "react";
+/// src/components/Login.jsx
+import React, { useState } from "react";
 import "../styles/Cadastro.css";
 
 export default function Login({ openRegister, cadastroState }) {
@@ -8,6 +8,18 @@ export default function Login({ openRegister, cadastroState }) {
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
+
+    // Validação da senha forte
+    const passwordRegex =
+      /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;"'<>?,./]).{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      alert(
+        "A senha deve ter pelo menos 8 caracteres, incluindo letra maiúscula, número e símbolo."
+      );
+      return; // Impede o envio se estiver inválida
+    }
+
     console.log("Login:", { email, password });
   };
 
@@ -44,17 +56,25 @@ export default function Login({ openRegister, cadastroState }) {
             <button type="submit" className="btn">
               Entrar
             </button>
-            <button type="button" className="btn" onClick={(e) => {
-              e.preventDefault();
+            <button
+              type="button"
+              className="btn"
+              onClick={(e) => {
+                e.preventDefault();
                 if (typeof openRegister === "function") return openRegister();
-                const fallback = document.querySelector(".link-open-register");
+                const fallback = document.querySelector(
+                  ".link-open-register"
+                );
                 if (fallback) fallback.click();
-            }}>
+              }}
+            >
               Cadastro
             </button>
           </div>
           <footer style={{ marginTop: 12 }}>
-            <a href="#" className="muted">Esqueceu a senha?</a>
+            <a href="#" className="muted">
+              Esqueceu a senha?
+            </a>
           </footer>
         </form>
       </div>

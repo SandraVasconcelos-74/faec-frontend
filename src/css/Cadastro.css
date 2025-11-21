@@ -1,0 +1,87 @@
+/* src/css/Cadastro.css: VARIÁVEIS DE TEMA E ESTILOS GERAIS DE FORMULÁRIO */
+
+:root {
+  --bg: #eef2f6;
+  --accent: #007a6e;
+  --accent-light: #00be68;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --radius: 14px;
+  --error: #e11d48;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* --- ESTILOS GERAIS DO FORMULÁRIO (Compartilhados) --- */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Altura removida para permitir que o formulário cresça dentro do padding do container */
+  height: auto; 
+  justify-content: center;
+}
+
+/* REVERTENDO A MARGEM: Deixando apenas a margem inferior */
+.logo-img { 
+  height: 45px; 
+  margin-bottom: 15px; 
+  /* margin-top: 0; ou remova a propriedade margin-top se ela estiver presente */
+}
+h2 { color: var(--accent); margin-bottom: 15px; font-size: 24px; }
+
+label {
+  align-self: flex-start;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #f9fafb;
+  border: 1px solid #e3e7ee;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+input::placeholder { color: #9ca3af; }
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-light);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 190, 104, 0.1);
+}
+
+.input-error { border-color: var(--error); }
+.error-message { color: var(--error); font-size: 12px; align-self: flex-start; margin-top: 2px; }
+
+.btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 45px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover { background-color: var(--accent-light); }
+
+.actions { width: 100%; display: flex; justify-content: space-between; margin-top: 15px; align-items: center; }
+footer { margin-top: 20px; font-size: 13px; color: var(--muted); }
+.link { color: var(--accent); font-weight: bold; cursor: pointer; margin-left: 5px; text-decoration: none; }
+.link:hover { text-decoration: underline; }
