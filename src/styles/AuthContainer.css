@@ -1,7 +1,7 @@
 .auth-container {
   display: flex;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1000px; /* Ajuste para não ficar grande demais */
   margin: 40px auto;
   border-radius: 18px;
   overflow: hidden;
@@ -23,6 +23,7 @@
   justify-content: center;
   color: white;
   transition: transform 0.8s ease;
+  position: relative;
 }
 
 .auth-visual::after {
@@ -66,10 +67,7 @@
   align-items: center;
 }
 
-.login-slide {
-  background: #fff;
-}
-
+.login-slide,
 .register-slide {
   background: #fff;
 }
@@ -84,13 +82,38 @@
   transform: translateX(-15%);
 }
 
+/* ============================
+   RESPONSIVIDADE (MOBILE)
+   ============================ */
 @media (max-width: 900px) {
   .auth-container {
     flex-direction: column;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .auth-visual {
+    height: 260px; /* controla o tamanho da imagem */
+    transform: none !important; /* impede deslocamento lateral */
+  }
+
+  .auth-visual-content {
+    padding: 24px;
+    text-align: center;
+  }
+
+  .auth-visual-content h1 {
+    font-size: 28px;
   }
 
   .forms-slider {
     width: 200%;
+  }
+
+  .form-slide {
+    padding: 20px;
   }
 
   .auth-container.active .forms-slider {
